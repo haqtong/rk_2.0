@@ -20,7 +20,7 @@ with open(r'../../data/structure_data/thesis_structuring_data.json', encoding='u
 aim_dict = {}
 def main():
     aim_list = ['项目整体管理', '项目范围管理', '项目风险管理', '项目成本管理', '项目进度管理',
-            '项目质量管理', '项目采购管理', '项目沟通管理', '项目人力资源管理', '项目干系人管理', '合同管理', '八大绩效域']
+            '项目质量管理', '项目采购管理', '项目沟通管理', '项目人力资源管理', '项目干系人管理']
     item ='a'
 
     while item == 'a':
@@ -45,9 +45,10 @@ def main():
                     output_list = output_str.split('#')
                     print(_)
                     thesis_structuring_data[_] = {}
-                    thesis_structuring_data[_]['输入'] = input_list
-                    thesis_structuring_data[_]['工具'] = tool_list
-                    thesis_structuring_data[_]['输出'] = output_list
+                    thesis_structuring_data[_][process] = {}
+                    thesis_structuring_data[_][process]['输入'] = input_list
+                    thesis_structuring_data[_][process]['工具'] = tool_list
+                    thesis_structuring_data[_][process]['输出'] = output_list
 
 
         print('是否继续：换行，结束 其他任意键')
