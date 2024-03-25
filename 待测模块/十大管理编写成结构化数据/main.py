@@ -33,6 +33,7 @@ def main():
                 print('请输入当前管理的过程组清单：')
                 process_group_str = input()
                 process_group_list = process_group_str.split('#')
+                thesis_structuring_data[_] = {}
                 for process in process_group_list:
                     print('请输入{}的输入'.format(process))
                     input_str = input()
@@ -44,7 +45,6 @@ def main():
                     output_str = input()
                     output_list = output_str.split('#')
                     print(_)
-                    thesis_structuring_data[_] = {}
                     thesis_structuring_data[_][process] = {}
                     thesis_structuring_data[_][process]['输入'] = input_list
                     thesis_structuring_data[_][process]['工具'] = tool_list
@@ -53,9 +53,9 @@ def main():
 
         print('是否继续：换行，结束 其他任意键')
         item = input()
-
+        thesis_structuring_white_list.append(_)
     with open("../../white_list/thesis_structuring_data.json", "w+", encoding='utf-8') as f:
-        f.write(json.dumps(thesis_structuring_data, ensure_ascii=False))
+        f.write(json.dumps(thesis_structuring_white_list, ensure_ascii=False))
 
     with open("../../data/structure_data/thesis_structuring_data.json", "w+", encoding='utf-8') as f:
         f.write(json.dumps(thesis_structuring_data, ensure_ascii=False))
