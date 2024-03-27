@@ -54,7 +54,7 @@ def main():
         print('是否继续：换行，结束 其他任意键')
         item = input()
         thesis_structuring_white_list.append(_)
-    with open("../../white_list/thesis_structuring_data.json", "w+", encoding='utf-8') as f:
+    with open("../../white_list/thesis_structuring_white_list.json", "w+", encoding='utf-8') as f:
         f.write(json.dumps(thesis_structuring_white_list, ensure_ascii=False))
 
     with open("../../data/structure_data/thesis_structuring_data.json", "w+", encoding='utf-8') as f:
