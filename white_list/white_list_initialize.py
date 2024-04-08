@@ -16,6 +16,12 @@ def get_these_item_white_list():
     with open("thesis_structuring_white_list.json", "w+", encoding='utf-8') as f:
         f.write(json.dumps(aim_list, ensure_ascii=False))
 
+def get_these_record_white_list():
+    aim_list = []
+    with open("thesis_record_white_list.json", "w+", encoding='utf-8') as f:
+        f.write(json.dumps(aim_list, ensure_ascii=False))
+
 
 if __name__ == '__main__':
-    get_these_item_white_list()
+    # get_these_item_white_list()
+    get_these_record_white_list()
